@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
 
@@ -22,7 +21,9 @@ class CalculatorProvider with ChangeNotifier {
       _result = '0';
     } else if (buttonText == '=') {
       try {
-        String finalExpression = _expression.replaceAll('x', '*').replaceAll('÷', '/');
+        String finalExpression = _expression
+            .replaceAll('x', '*')
+            .replaceAll('÷', '/');
         Parser p = Parser();
         Expression exp = p.parse(finalExpression);
         ContextModel cm = ContextModel();
